@@ -1,13 +1,14 @@
-export default function Button({ text }){
+export default function Button({ onClick = () => {}, children }){
     return (
         <div>
             <button
               type="submit"
-              className="block w-full py-2 text-center font-semibold text-white bg-indigo-600 
-              rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 
-              focus:ring-indigo-600"
+              onClick={onClick}
+              className="block w-full p-2 text-center font-semibold text-white bg-blue-800 
+              rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 
+              focus:ring-blue-600"
             >
-              {text}
+              {children}
             </button>
           </div>
     )

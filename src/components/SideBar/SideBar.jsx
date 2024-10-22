@@ -1,6 +1,6 @@
 "use client";
 import { usePathname, useRouter } from 'next/navigation'
-import { Car, LetterCircleP } from "@phosphor-icons/react/dist/ssr"
+import { Car, LetterCircleP, SignOut } from "@phosphor-icons/react/dist/ssr"
 
 export default function SideBar(){
     const pathname = usePathname()
@@ -20,6 +20,10 @@ export default function SideBar(){
                 <div onClick={() => goToPage("/park")} 
                 className={pathname === "/park" ? "bg-green-600 p-2 rounded-md cursor-pointer" : "cursor-pointer"}>
                     <LetterCircleP  color="white" size={26} />
+                </div>
+                <div onClick={() => goToPage("/dashboard")} 
+                className={"cursor-pointer"}>
+                    <SignOut color="white" size={26} />
                 </div>
         </div>
     )
