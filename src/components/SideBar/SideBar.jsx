@@ -11,7 +11,7 @@ export default function SideBar(){
     }
 
     return (
-        <div className="absolute left-0 min-h-screen min-w-24 p-2 flex 
+        <div className="absolute left-0 min-h-screen min-w-24 p-2 flex max-w-24
         justify-start items-center bg-blue-950 text-white flex-col space-y-3">
                 <div onClick={() => goToPage("/dashboard")} 
                 className={pathname === "/dashboard" ? "bg-green-600 p-2 rounded-md cursor-pointer" : "cursor-pointer"}>
@@ -21,8 +21,8 @@ export default function SideBar(){
                 className={pathname === "/park" ? "bg-green-600 p-2 rounded-md cursor-pointer" : "cursor-pointer"}>
                     <LetterCircleP  color="white" size={26} />
                 </div>
-                <div onClick={() => goToPage("/dashboard")} 
-                className={"cursor-pointer"}>
+                <div onClick={() => goToPage("/")} 
+                    className={"cursor-pointer"}>
                     <SignOut color="white" size={26} />
                 </div>
         </div>

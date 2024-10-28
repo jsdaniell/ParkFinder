@@ -1,5 +1,6 @@
 "use client"
 import Button from "@/components/Button/Button";
+import InputWithLabel from "@/components/InputWithLabel/InputWithLabel";
 import ModalWithBackdrop from "@/components/ModalWithBackdrop/ModalWithBackdrop";
 import SideBar from "@/components/SideBar/SideBar";
 import { Trash } from "@phosphor-icons/react/dist/ssr";
@@ -12,7 +13,10 @@ export default function ParkPage() {
         <div className="flex relative min-h-full items-center flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <SideBar />
             <ModalWithBackdrop show={showModal} onClose={() => setShowModal(false)}>
-                DSDASSA
+                <div className="flex flex-col space-y-4">
+                    <InputWithLabel label="N° Identificador" type="number" />
+                    <Button>Salvar</Button>
+                </div>
             </ModalWithBackdrop>
             <div className="flex flex-col flex-grow w-full justify-start items-end pl-24">
                 <div className="flex">
