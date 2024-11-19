@@ -2,7 +2,7 @@ import { CarSimple } from "@phosphor-icons/react/dist/ssr";
 
 export default function CardStatus() {
     return (
-        <div className="bg-blue-950 rounded-2xl flex  flex-col justify-between m-2 text-white p-3 px-5 flex-shrink">
+        <div className="bg-blue-950 rounded-2xl flex flex-col justify-between m-2 text-white p-3 px-5 flex-shrink">
             <div className="flex">
                 <div className="flex-1 flex justify-start font-bold">
                     N° 001

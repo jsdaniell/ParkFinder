@@ -29,7 +29,9 @@ export default function Home() {
             required
             autoComplete="current-password"
           />
-          <Button>Entrar</Button>
+          <Button>
+            Entrar
+           </Button>
         </form>
       </div>
     </div>
