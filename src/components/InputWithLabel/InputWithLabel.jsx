@@ -5,7 +5,9 @@ export default function InputWithLabel({
     type = 'text', 
     required = false, 
     autoComplete = 'off',
-    onChange = () => {}
+    onChange = () => {},
+    disabled = false,
+    value = ""
 }) {
     return (
         <div>
@@ -14,7 +16,9 @@ export default function InputWithLabel({
             </label>
             <div className="mt-2">
               <input 
+              disabled={disabled}
               id={id}
+              value={value}
               name={name}
               type={type}
               required={required}

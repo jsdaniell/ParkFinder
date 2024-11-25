@@ -2,11 +2,14 @@
 import Button from "@/components/Button/Button";
 import InputWithLabel from "@/components/InputWithLabel/InputWithLabel";
 import { URL_API } from "@/utils/constants/serviceConstants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const router = useRouter();
 
   function login() {
     const myHeaders = new Headers();
@@ -25,10 +28,21 @@ export default function Home() {
     };
 
     fetch(URL_API + "auth/login", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then(async (response) => {
+        const result = await response.json();
+        
+        localStorage.setItem("user", JSON.stringify(result));
+        return router.push("/dashboard");
+      })
       .catch((error) => console.error(error));
   }
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user && JSON.parse(user)) {
+      router.push("/dashboard");
+    }
+  }, []);
 
 
   return (
