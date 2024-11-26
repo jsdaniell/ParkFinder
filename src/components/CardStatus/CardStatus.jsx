@@ -1,6 +1,6 @@
 import { CarSimple } from "@phosphor-icons/react/dist/ssr";
 
-export default function CardStatus({name = "Name", occuped = false, plate = "", onClick = () => {}}) {
+export default function CardStatus({name = "Name", occuped = false, plate = "", onClick = () => {}, entryHour = "00:00:00"}) {
     return (
         <div onClick={onClick} className="bg-blue-950 cursor-pointer rounded-2xl flex flex-col justify-between m-2 text-white p-3 px-5 space-y-3 flex-shrink">
             <div className="flex">
@@ -17,7 +17,7 @@ export default function CardStatus({name = "Name", occuped = false, plate = "", 
             </div>
             <div className="flex justify-center items-center">
                 <div className="flex-1 flex justify-center">
-                    E: &nbsp; <span className="font-bold">00:00:00</span>
+                    E: &nbsp; <span className="font-bold">{occuped ? entryHour : "00:00:00"}</span>
                 </div>
             </div>
         </div>

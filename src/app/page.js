@@ -58,6 +58,7 @@ export default function Home() {
           <InputWithLabel
             label="Email"
             id="email"
+            value={email}
             name="email"
             type="email"
             onChange={e => setEmail(e.target.value)}
@@ -66,6 +67,7 @@ export default function Home() {
           />
           <InputWithLabel
             label="Senha"
+            value={password}
             id="password"
             name="password"
             type="password"

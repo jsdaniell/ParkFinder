@@ -63,8 +63,8 @@ export default function ParkPage() {
             <SideBar />
             <ModalWithBackdrop show={showModal} onClose={() => setShowModal(false)}>
                 <div className="flex flex-col space-y-4">
-                    <InputWithLabel label="Nome" type="text" onChange={(e) => setName(e.target.value)} />
-                    <InputWithLabel label="N° Andar" type="number" onChange={(e) => setFloor(e.target.value)} />
+                    <InputWithLabel label="Nome" type="text" onChange={(e) => setName(e.target.value)} value={name} />
+                    <InputWithLabel label="N° Andar" type="number" onChange={(e) => setFloor(e.target.value)} value={floor} />
                     <Button onClick={registerSpace}>Adicionar</Button>
                 </div>
             </ModalWithBackdrop>
